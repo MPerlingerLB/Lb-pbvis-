@@ -1,0 +1,242 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Item",
+      "name": "item",
+      "kind": "Grouping",
+      "description": "One tile per value, e.g. Project, Building, Contract"
+    },
+    {
+      "displayName": "Status (text, optional)",
+      "name": "status",
+      "kind": "Grouping",
+      "description": "e.g. Red / Amber / Green, On track / At risk / Off track"
+    },
+    {
+      "displayName": "Subtitle (optional)",
+      "name": "subtitle",
+      "kind": "Grouping",
+      "description": "e.g. Project manager, Client, Location"
+    },
+    {
+      "displayName": "Score (numeric status, optional)",
+      "name": "score",
+      "kind": "Measure",
+      "description": "Used when there is no text status; thresholds in Format > Status"
+    },
+    {
+      "displayName": "Key metric (optional)",
+      "name": "metric",
+      "kind": "Measure",
+      "description": "e.g. % budget used, Days to deadline"
+    },
+    {
+      "displayName": "Tooltips",
+      "name": "tooltips",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "item": {
+            "max": 1
+          },
+          "status": {
+            "max": 1
+          },
+          "subtitle": {
+            "max": 1
+          },
+          "score": {
+            "max": 1
+          },
+          "metric": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": {
+          "select": [
+            {
+              "bind": {
+                "to": "item"
+              }
+            },
+            {
+              "bind": {
+                "to": "status"
+              }
+            },
+            {
+              "bind": {
+                "to": "subtitle"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 500
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "score"
+              }
+            },
+            {
+              "bind": {
+                "to": "metric"
+              }
+            },
+            {
+              "bind": {
+                "to": "tooltips"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "status": {
+      "properties": {
+        "sortWorstFirst": {
+          "type": {
+            "bool": true
+          }
+        },
+        "higherScoreIsBetter": {
+          "type": {
+            "bool": true
+          }
+        },
+        "goodAt": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "warnAt": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "tileWidth": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "showSummary": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "primary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "neutral": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "good": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "bad": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "properties": {
+        "fontSize": {
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "showLabels": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsEmptyDataView": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "suppressDefaultTitle": false,
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "tooltips"
+    ]
+  },
+  "privileges": []
+}

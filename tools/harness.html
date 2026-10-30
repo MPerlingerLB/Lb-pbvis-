@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#fff} #host{position:relative} #msgs{font:11px monospace;color:#c00}</style>
+<script>
+// Minimal stand-in for the Power BI visual host, enough to render and exercise a visual.
+window.powerbi = { visuals: { plugins: {} } };
+window.__calls = { tooltip: 0, select: 0, contextMenu: 0, errors: [] };
+const themeColors = ["#78BE20","#2D2926","#00857C","#0072CE","#5B6770","#F2A900","#8E6CBF","#C8102E"];
+function makeId(key){ return { key, getKey(){return key;}, equals(o){ return o && o.getKey && o.getKey()===key; }, getSelector(){return {};}, getSelectorsByColumn(){return {};}, hasIdentity(){return true;}, includes(o){return this.equals(o);} }; }
+window.makeHost = function(opts){
+  let selected = [], cb = null, colorIdx = 0; const assigned = {};
+  const hc = !!(opts && opts.highContrast);
+  return {
+    hostCapabilities: { allowInteractions: true },
+    locale: "en-US",
+    colorPalette: {
+      isHighContrast: hc,
+      foreground: { value: hc ? "#FFFF00" : "#2D2926" }, background: { value: hc ? "#000000" : "#FFFFFF" },
+      foregroundSelected: { value: "#00FFFF" }, hyperlink: { value: "#0072CE" },
+      getColor(k){ if(!assigned[k]) assigned[k] = themeColors[(colorIdx++) % themeColors.length]; return { value: assigned[k] }; },
+      reset(){ return this; }
+    },
+    createSelectionIdBuilder(){ const parts=[]; const b = {
+      withCategory(c,i){ parts.push("c:"+c.source.displayName+":"+c.values[i]); return b; },
+      withTable(t,r){ parts.push("t:"+r); return b; },
+      withMeasure(m){ parts.push("m:"+m); return b; },
+      withSeries(s,v){ parts.push("s"); return b; },
+      withMatrixNode(){ return b; },
+      createSelectionId(){ return makeId(parts.join("|")); } }; return b; },
+    createSelectionManager(){ return {
+      select(id, multi){ __calls.select++; const ids = Array.isArray(id)?id:[id]; if(multi){ ids.forEach(i=>{ const k=selected.findIndex(s=>s.equals(i)); k>=0?selected.splice(k,1):selected.push(i);}); } else { selected = (selected.length===1 && selected[0].equals(ids[0])) ? [] : ids.slice(); } return Promise.resolve(selected); },
+      clear(){ selected=[]; return Promise.resolve(); },
+      getSelectionIds(){ return selected; }, hasSelection(){ return selected.length>0; },
+      showContextMenu(){ __calls.contextMenu++; return Promise.resolve(); },
+      registerOnSelectCallback(f){ cb=f; }, toggleExpandCollapse(){ return Promise.resolve(); } }; },
+    tooltipService: { enabled(){return true;}, show(){ __calls.tooltip++; }, move(){}, hide(){} },
+    eventService: { renderingStarted(){}, renderingFinished(){ window.__rendered = (window.__rendered||0)+1; }, renderingFailed(o,r){ __calls.errors.push(r); } },
+    persistProperties(){}, applyJsonFilter(){}, launchUrl(){}, displayWarningIcon(){},
+    createLocalizationManager(){ return { getDisplayName(k){ return k; } }; },
+    storageService: {}, licenseManager: {}, telemetry: {}, authenticationService: {}, downloadService: {}, hostEnv: 1
+  };
+};
+window.addEventListener("error", e => __calls.errors.push(String(e.message)));
+</script>
+</head><body><div id="host"></div><div id="msgs"></div></body></html>

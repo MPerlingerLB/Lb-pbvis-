@@ -1,0 +1,239 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Source (from)",
+      "name": "source",
+      "kind": "Grouping",
+      "description": "Where the flow starts, e.g. Lead source, Office, Budget line"
+    },
+    {
+      "displayName": "Destination (to)",
+      "name": "target",
+      "kind": "Grouping",
+      "description": "Where it goes, e.g. Proposal status, Service line"
+    },
+    {
+      "displayName": "Weight",
+      "name": "weight",
+      "kind": "Measure",
+      "description": "Size of the flow, e.g. # proposals, Hours, $"
+    },
+    {
+      "displayName": "Tooltips",
+      "name": "tooltips",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "source": {
+            "max": 1
+          },
+          "target": {
+            "max": 1
+          },
+          "weight": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": {
+          "select": [
+            {
+              "bind": {
+                "to": "source"
+              }
+            },
+            {
+              "bind": {
+                "to": "target"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 2000
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "weight"
+              }
+            },
+            {
+              "bind": {
+                "to": "tooltips"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "sankey": {
+      "properties": {
+        "align": {
+          "type": {
+            "enumeration": [
+              {
+                "value": "justify",
+                "displayName": "Justify"
+              },
+              {
+                "value": "left",
+                "displayName": "Left"
+              },
+              {
+                "value": "right",
+                "displayName": "Right"
+              },
+              {
+                "value": "center",
+                "displayName": "Center"
+              }
+            ]
+          }
+        },
+        "linkColor": {
+          "type": {
+            "enumeration": [
+              {
+                "value": "source",
+                "displayName": "By source"
+              },
+              {
+                "value": "target",
+                "displayName": "By destination"
+              },
+              {
+                "value": "neutral",
+                "displayName": "Neutral"
+              }
+            ]
+          }
+        },
+        "nodeWidth": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "nodePadding": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "linkOpacity": {
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "primary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "neutral": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "good": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "bad": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "properties": {
+        "fontSize": {
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "showLabels": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsEmptyDataView": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "suppressDefaultTitle": false,
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "tooltips"
+    ]
+  },
+  "privileges": []
+}

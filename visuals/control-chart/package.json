@@ -1,0 +1,12 @@
+{
+  "name": "lb-control-chart",
+  "private": true,
+  "version": "1.0.0.0",
+  "description": "Statistical process control (XmR / individuals) chart with mean, control limits and signal detection.",
+  "license": "MIT",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint ."
+  }
+}

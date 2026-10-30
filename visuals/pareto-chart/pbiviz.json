@@ -1,0 +1,26 @@
+{
+  "visual": {
+    "name": "lbParetoChart",
+    "displayName": "LB Pareto Chart",
+    "guid": "lbParetoChartC3E6A9B42D1F4A7CAB53E8F4A1D9C632",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "Sorted bars with cumulative-percentage line and 80/20 cut-off to focus on the vital few.",
+    "supportUrl": "https://github.com/mperlingerlb/lb-pbvis-",
+    "gitHubUrl": "https://github.com/mperlingerlb/lb-pbvis-"
+  },
+  "apiVersion": "5.11.1",
+  "author": {
+    "name": "Lerch Bates",
+    "email": "matthew.perlinger@lerchbates.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": [],
+  "version": "1.0.0.0"
+}

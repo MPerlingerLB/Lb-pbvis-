@@ -1,0 +1,466 @@
+{
+  "name": "Lerch Bates (placeholder colors - verify with LB brand guide)",
+  "dataColors": [
+    "#78BE20",
+    "#2D2926",
+    "#00857C",
+    "#0072CE",
+    "#5B6770",
+    "#F2A900",
+    "#8E6CBF",
+    "#C8102E",
+    "#A6D96A",
+    "#9AA0A6"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#2D2926",
+  "tableAccent": "#78BE20",
+  "good": "#4C9A2A",
+  "neutral": "#F2A900",
+  "bad": "#C8102E",
+  "maximum": "#78BE20",
+  "center": "#D9DCDE",
+  "minimum": "#FFFFFF",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#2D2926"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#2D2926"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#2D2926"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Light",
+      "fontSize": 28,
+      "color": "#2D2926"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbBulletChartA1C4E7F20B9D4E5A8F31C6D2E9B7A410": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbCalendarHeatmapB2D5F8A31C0E4F6B9A42D7E3F0C8B521": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbParetoChartC3E6A9B42D1F4A7CAB53E8F4A1D9C632": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbControlChartD4F7BAC53E2A4B8DBC64F9A5B2EAD743": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbBoxPlotE5A8CBD64F3B4C9ECD75AAB6C3FBE854": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbSankeyFlowF6B9DCE75A4C4DAFDE86BBC7D4ACF965": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbBaselineGanttA7CAEDF86B5D4EBAEF97CCD8E5BDAA76": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbMilestoneTimelineB8DBFEA97C6E4FCBFAA8DDE9F6CEBB87": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbVarianceChartC9ECAFBA8D7F4ADCABB9EEFAA7DFCC98": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lbStatusGridDAFDBACB9E8A4BEDBCCAFFABB8EADD09": {
+      "*": {
+        "brand": [
+          {
+            "primary": {
+              "solid": {
+                "color": "#78BE20"
+              }
+            },
+            "secondary": {
+              "solid": {
+                "color": "#2D2926"
+              }
+            },
+            "neutral": {
+              "solid": {
+                "color": "#D9DCDE"
+              }
+            },
+            "good": {
+              "solid": {
+                "color": "#4C9A2A"
+              }
+            },
+            "warning": {
+              "solid": {
+                "color": "#F2A900"
+              }
+            },
+            "bad": {
+              "solid": {
+                "color": "#C8102E"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

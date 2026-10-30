@@ -1,0 +1,29 @@
+@font: 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif;
+
+.lb-root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: @font;
+    position: relative;
+    svg { display: block; overflow: visible; }
+    text { font-family: @font; }
+    [tabindex]:focus { outline: none; }
+    [tabindex]:focus-visible { outline: 2px solid #0072CE; outline-offset: 1px; }
+}
+
+.lb-landing {
+    font-family: @font;
+    padding: 12px 16px;
+    font-size: 12px;
+    .lb-landing-bar { width: 36px; height: 4px; border-radius: 2px; margin-bottom: 8px; }
+    .lb-landing-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 2px 0; line-height: 1.4; }
+}
+
+.lb-warning {
+    font-family: @font;
+    font-size: 11px;
+    padding: 4px 8px;
+}

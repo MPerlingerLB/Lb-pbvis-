@@ -1,0 +1,254 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category (optional)",
+      "name": "category",
+      "kind": "Grouping",
+      "description": "One bullet per value, e.g. Office, Region, KPI name"
+    },
+    {
+      "displayName": "Actual",
+      "name": "actual",
+      "kind": "Measure",
+      "description": "The measured value, e.g. Billable hours"
+    },
+    {
+      "displayName": "Target",
+      "name": "target",
+      "kind": "Measure",
+      "description": "Goal for the actual value"
+    },
+    {
+      "displayName": "Poor band upper limit (optional)",
+      "name": "band1",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Satisfactory band upper limit (optional)",
+      "name": "band2",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Axis maximum (optional)",
+      "name": "bandMax",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Tooltips",
+      "name": "tooltips",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "category": {
+            "max": 1
+          },
+          "actual": {
+            "max": 1
+          },
+          "target": {
+            "max": 1
+          },
+          "band1": {
+            "max": 1
+          },
+          "band2": {
+            "max": 1
+          },
+          "bandMax": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": {
+          "for": {
+            "in": "category"
+          },
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 100
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "actual"
+              }
+            },
+            {
+              "bind": {
+                "to": "target"
+              }
+            },
+            {
+              "bind": {
+                "to": "band1"
+              }
+            },
+            {
+              "bind": {
+                "to": "band2"
+              }
+            },
+            {
+              "bind": {
+                "to": "bandMax"
+              }
+            },
+            {
+              "bind": {
+                "to": "tooltips"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "bullet": {
+      "properties": {
+        "higherIsBetter": {
+          "type": {
+            "bool": true
+          }
+        },
+        "poorPct": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "satisfactoryPct": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "maxPct": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "colorByPerformance": {
+          "type": {
+            "bool": true
+          }
+        },
+        "sharedScale": {
+          "type": {
+            "bool": true
+          }
+        },
+        "labelWidth": {
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "primary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "neutral": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "good": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "bad": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "properties": {
+        "fontSize": {
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "showLabels": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsEmptyDataView": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "suppressDefaultTitle": false,
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "tooltips"
+    ]
+  },
+  "privileges": []
+}

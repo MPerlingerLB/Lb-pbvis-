@@ -1,0 +1,12 @@
+{
+  "name": "lb-variance-chart",
+  "private": true,
+  "version": "1.0.0.0",
+  "description": "Actual vs. plan (or prior year) columns with absolute and % variance bars, IBCS style.",
+  "license": "MIT",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint ."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "lb-pareto-chart",
+  "private": true,
+  "version": "1.0.0.0",
+  "description": "Sorted bars with cumulative-percentage line and 80/20 cut-off to focus on the vital few.",
+  "license": "MIT",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint ."
+  }
+}

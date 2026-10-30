@@ -1,0 +1,12 @@
+{
+  "name": "lb-box-plot",
+  "private": true,
+  "version": "1.0.0.0",
+  "description": "Distribution of values per category: median, quartiles, whiskers and outliers.",
+  "license": "MIT",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint ."
+  }
+}

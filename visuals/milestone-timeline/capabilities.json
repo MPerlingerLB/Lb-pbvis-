@@ -1,0 +1,214 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Swimlane (optional)",
+      "name": "lane",
+      "kind": "Grouping",
+      "description": "e.g. Project, Building, Workstream"
+    },
+    {
+      "displayName": "Milestone",
+      "name": "label",
+      "kind": "Grouping",
+      "description": "Milestone or event name"
+    },
+    {
+      "displayName": "Date",
+      "name": "date",
+      "kind": "Grouping",
+      "description": "Milestone date (pick the field, not 'Date Hierarchy')"
+    },
+    {
+      "displayName": "Status (optional)",
+      "name": "status",
+      "kind": "Grouping",
+      "description": "e.g. Complete, At risk, Late, Planned"
+    },
+    {
+      "displayName": "Tooltips",
+      "name": "tooltips",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "lane": {
+            "max": 1
+          },
+          "label": {
+            "max": 1
+          },
+          "date": {
+            "max": 1
+          },
+          "status": {
+            "max": 1
+          }
+        }
+      ],
+      "table": {
+        "rows": {
+          "select": [
+            {
+              "for": {
+                "in": "lane"
+              }
+            },
+            {
+              "for": {
+                "in": "label"
+              }
+            },
+            {
+              "for": {
+                "in": "date"
+              }
+            },
+            {
+              "for": {
+                "in": "status"
+              }
+            },
+            {
+              "for": {
+                "in": "tooltips"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "window": {
+              "count": 1000
+            }
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "timeline": {
+      "properties": {
+        "showToday": {
+          "type": {
+            "bool": true
+          }
+        },
+        "showLegend": {
+          "type": {
+            "bool": true
+          }
+        },
+        "laneLabelWidth": {
+          "type": {
+            "numeric": true
+          }
+        },
+        "markerSize": {
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "primary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "neutral": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "good": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "bad": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "properties": {
+        "fontSize": {
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "showLabels": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsEmptyDataView": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "suppressDefaultTitle": false,
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "tooltips"
+    ]
+  },
+  "privileges": []
+}

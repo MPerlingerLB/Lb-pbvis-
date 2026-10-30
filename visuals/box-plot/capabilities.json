@@ -1,0 +1,226 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category",
+      "name": "category",
+      "kind": "Grouping",
+      "description": "One box per value, e.g. Office, Service line, Equipment type"
+    },
+    {
+      "displayName": "Sample (individual records)",
+      "name": "sample",
+      "kind": "Grouping",
+      "description": "The level of detail of each data point, e.g. Project ID, Ticket #"
+    },
+    {
+      "displayName": "Value",
+      "name": "value",
+      "kind": "Measure",
+      "description": "e.g. Duration (weeks), Cost, Response time"
+    },
+    {
+      "displayName": "Tooltips",
+      "name": "tooltips",
+      "kind": "Measure"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "category": {
+            "max": 1
+          },
+          "sample": {
+            "max": 1
+          },
+          "value": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": {
+          "select": [
+            {
+              "bind": {
+                "to": "category"
+              }
+            },
+            {
+              "bind": {
+                "to": "sample"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 30000
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "value"
+              }
+            },
+            {
+              "bind": {
+                "to": "tooltips"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "box": {
+      "properties": {
+        "whiskers": {
+          "type": {
+            "enumeration": [
+              {
+                "value": "iqr",
+                "displayName": "1.5 × IQR (Tukey)"
+              },
+              {
+                "value": "minmax",
+                "displayName": "Min / max"
+              }
+            ]
+          }
+        },
+        "showMean": {
+          "type": {
+            "bool": true
+          }
+        },
+        "showPoints": {
+          "type": {
+            "bool": true
+          }
+        },
+        "sortBy": {
+          "type": {
+            "enumeration": [
+              {
+                "value": "data",
+                "displayName": "Data order"
+              },
+              {
+                "value": "name",
+                "displayName": "Name"
+              },
+              {
+                "value": "median",
+                "displayName": "Median (high to low)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "primary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "neutral": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "good": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "warning": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "bad": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "properties": {
+        "fontSize": {
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontColor": {
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "showLabels": {
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsLandingPage": true,
+  "supportsEmptyDataView": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "suppressDefaultTitle": false,
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "tooltips"
+    ]
+  },
+  "privileges": []
+}

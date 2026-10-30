@@ -1,0 +1,12 @@
+{
+  "name": "lb-sankey-flow",
+  "private": true,
+  "version": "1.0.0.0",
+  "description": "Flow diagram showing how a quantity moves between stages, sources and destinations.",
+  "license": "MIT",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint ."
+  }
+}
